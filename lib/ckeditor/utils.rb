@@ -26,6 +26,8 @@ module Ckeditor
       end
       
       def js_replace(dom_id, options = {})
+        options[:filebrowserBrowseUrl] = '/ckeditor/pictures'
+        options[:filebrowserUploadUrl] = '/ckeditor/pictures'
         js_options = ActiveSupport::JSON.encode(options)
         
         js = ["if (CKEDITOR.instances['#{dom_id}']) {CKEDITOR.remove(CKEDITOR.instances['#{dom_id}']);}"]
